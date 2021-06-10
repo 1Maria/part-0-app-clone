@@ -12,6 +12,11 @@ const App = (props) => {
     console.log('button clicked', event.target);
   }
 
+  const handleNoteChange = (event) => {
+    console.log(event.target.value);
+    setNewNote(event.target.value);
+  }
+
   return (
     <div>
       <h1>Notes</h1>
@@ -20,7 +25,10 @@ const App = (props) => {
           <Note key={note.id} note={note} />)}
       </ul>
       <form onSubmit={addNote}>
-        <input value={newNote} />
+        <input 
+          value={newNote}
+          onChange={handleNoteChange} 
+        />
         <button type="submit">save</button>
       </form>
     </div>
