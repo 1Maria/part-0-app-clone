@@ -7,14 +7,10 @@ axios
   .get('http://localhost:3020/notes')
   .then(response => {
     const notes = response.data;
-    console.log(notes);
-  });
-
-axios
-  .get('http://localhost:3020/foobar')
-  .then(response => {
-    const notes = response.data;
-    console.log(notes);
+    ReactDOM.render(
+      <App notes={notes} />,
+      document.getElementById('root')
+    );
   });
 
 const notes = [
@@ -37,8 +33,3 @@ const notes = [
     important: true
   }
 ]
-
-ReactDOM.render(
-  <App notes={notes} />,
-  document.getElementById('root')
-);
