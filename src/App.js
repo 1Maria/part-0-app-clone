@@ -9,14 +9,12 @@ const App = () => {
 
   useEffect(() => {
     console.log('effect')
-  
-    const eventHandler = response => {
-      console.log('promise fulfilled')
-      setNotes(response.data)
-    }
-  
-    const promise = axios.get('http://localhost:3001/notes')
-    promise.then(eventHandler)
+    axios
+      .get('http://localhost:3020/notes')
+      .then(response => {
+        console.log('promise fulfilled')
+        setNotes(response.data)
+      })
   }, [])
 
   console.log('render', notes.length, 'notes');
