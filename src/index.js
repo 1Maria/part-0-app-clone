@@ -4,10 +4,16 @@ import axios from 'axios';
 import App from './App';
 
 const promise = axios.get('http://localhost:3020/notes');
-console.log(promise);
 
-const promise2 = axios.get('http://localhost:3020/foobar')
-console.log(promise2);
+promise.then(response => {
+  console.log(response);
+});
+
+const promise2 = axios.get('http://localhost:3020/foobar');
+
+promise2.then(response => {
+  console.log(response);
+});
 
 const notes = [
   {
