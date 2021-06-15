@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import App from './App';
 
-axios.get('http://localhost:3020/notes').then(response => {
-  const notes = response.data;
-  console.log(notes);
-});
+axios
+  .get('http://localhost:3020/notes')
+  .then(response => {
+    const notes = response.data;
+    console.log(notes);
+  });
 
-axios.get('http://localhost:3020/foobar').then(response => {
-  const notes = response.data;
-  console.log(notes);
-});
+axios
+  .get('http://localhost:3020/foobar')
+  .then(response => {
+    const notes = response.data;
+    console.log(notes);
+  });
 
 const notes = [
   {
