@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import App from './App';
 
-const promise = axios.get('http://localhost:3020/notes');
-
-promise.then(response => {
-  console.log(response);
+axios.get('http://localhost:3020/notes').then(response => {
+  const notes = response.data;
+  console.log(notes);
 });
 
-const promise2 = axios.get('http://localhost:3020/foobar');
-
-promise2.then(response => {
-  console.log(response);
+axios.get('http://localhost:3020/foobar').then(response => {
+  const notes = response.data;
+  console.log(notes);
 });
 
 const notes = [
