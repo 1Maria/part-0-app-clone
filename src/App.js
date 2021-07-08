@@ -43,7 +43,6 @@ const App = () => {
     axios.put(url, changedNote).then(response => {
       setNotes(notes.map(note => note.id !== id ? note : response.data))
     });
-    // console.log('importance of ' + id + ' needs to be toggled');
   }
 
   const handleNoteChange = (event) => {
