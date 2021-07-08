@@ -30,11 +30,9 @@ const App = () => {
     axios
       .post('http://localhost:3020/notes', noteObject)
       .then(response => {
-        console.log(response);
+        setNotes(notes.concat(noteObject));
+        setNewNote('');
       });
-    
-    // setNotes(notes.concat(noteObject));
-    // setNewNote('');
   }
 
   const handleNoteChange = (event) => {
